@@ -7,12 +7,16 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/time', (req, res) => {
-    res.send("time");
+    const currentTime = new Date();
+    res.json({
+        time: currentTime
+    })
+   
 });
 
-app.get('/date', (req, res) => {
-    res.send("date");
-});
+// app.get('/date', (req, res) => {
+//     res.send("date");
+// });
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);  
